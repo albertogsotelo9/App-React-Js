@@ -1,8 +1,13 @@
 import './App.css';
-import { NavBar } from './components/NavBar'
+import NavBar  from './components/NavBar'
+import ItemListContainer  from './components/Catalogo/List'
 function App() {
   return (
-    <NavBar />
+    <div className="body">
+      <NavBar />
+      <ItemListContainer />
+    </div>
+    
   );
 }
 

@@ -13,7 +13,6 @@ body{
 
 
 nav{
-    grid-area: NAV;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -53,4 +52,9 @@ nav{
 }
 .nav-links li a:hover{
     background-color:#ef8354;
+}
+
+.widget{
+    width:11%;
+    height:70%;
 }
