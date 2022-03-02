@@ -1,10 +1,14 @@
+import ItemCount from '../Contador/ItemCount'
+function ItemListContainer ({saludo}){
+        return(
+            
+               <div>
+                    <p>{saludo}</p>
+                    <ItemCount />
+               </div>
+                
+        );
+    }
+    
 
-
-const ItemListContainer= ({saludo}) =>{
-    return(
-        
-            <p>{saludo}</p>
-        
-    );
-}
 export default ItemListContainer
