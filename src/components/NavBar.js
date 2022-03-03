@@ -1,7 +1,7 @@
-
 import React from 'react'
 import './NavBar.css'
 import Widget from './Widget'
+import '../../src/App.css'
 
 const NavBar = () =>{
   
