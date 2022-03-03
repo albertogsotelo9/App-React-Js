@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import Div from '../Catalogo/Div'
-
+import '../../App.css'
 function ItemCount() {
     const [count, setCount] = useState(0);
     
@@ -10,10 +10,48 @@ function ItemCount() {
     };
 
     return (
-        <div>
-            <Div />
-            <label>{ count }</label>
-            <button onClick={itemCounter}>Agregar al Carrito</button>
+        <div className="contenedor_imagenes">
+            <div>
+                <Div />
+                <label>{ count }</label>
+                <button onClick={itemCounter}>Agregar al Carrito</button>
+            </div>
+            <div>
+                <Div />
+                <label>{ count }</label>
+                <button onClick={itemCounter}>Agregar al Carrito</button>
+            </div>
+            <div>
+                <Div />
+                <label>{ count }</label>
+                <button onClick={itemCounter}>Agregar al Carrito</button>
+            </div>
+            <div>
+                <Div />
+                <label>{ count }</label>
+                <button onClick={itemCounter}>Agregar al Carrito</button>
+            </div>
+            <div>
+                <Div />
+                <label>{ count }</label>
+                <button onClick={itemCounter}>Agregar al Carrito</button>
+            </div>
+            <div>
+                <Div />
+                <label>{ count }</label>
+                <button onClick={itemCounter}>Agregar al Carrito</button>
+            </div>
+            <div>
+                <Div />
+                <label>{ count }</label>
+                <button onClick={itemCounter}>Agregar al Carrito</button>
+            </div>
+            <div>
+                <Div />
+                <label>{ count }</label>
+                <button onClick={itemCounter}>Agregar al Carrito</button>
+            </div>
+            
         </div>
     )
 
