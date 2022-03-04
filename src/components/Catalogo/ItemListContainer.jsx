@@ -1,11 +1,16 @@
+
 import ItemCount from '../Contador/ItemCount'
 
+
 function ItemListContainer ({saludo}){
-        return(
+    
+    
+    return(
             
                <div>
                     <p>{saludo}</p>
                     <ItemCount />
+                    
                </div>
                 
         );

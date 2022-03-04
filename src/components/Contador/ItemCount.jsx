@@ -1,56 +1,46 @@
-import {useState} from 'react'
 import Div from '../Catalogo/Div'
 import '../../App.css'
-function ItemCount() {
-    const [count, setCount] = useState(0);
-    
+import { getFetch } from '../../Helpers/getFetch';
+import { useEffect, useState } from 'react';
 
-    const itemCounter = ()=>{
-        setCount(count+1);
-    };
+function ItemCount() {
+    const [product, setProduct]= useState([])
+    const [loading, setLoading]= useState([true])
+
+    useEffect(() => {
+        getFetch
+        .then((respuesta)=> {
+            //throw new Error('esto es un error')
+            return respuesta;
+        })
+        .then((resp) => setProduct(resp))
+        .catch(err => console.log(err))
+        .finally(() => setLoading(false))
+        
+    },[])
+    const [count, setCount] = useState(0);
+    const itemCounter = (()=>{
+        setCount(count+1)})
+    
 
     return (
         <div className="contenedor_imagenes">
-            <div>
-                <Div />
-                <label>{ count }</label>
-                <button onClick={itemCounter}>Agregar al Carrito</button>
-            </div>
-            <div>
-                <Div />
-                <label>{ count }</label>
-                <button onClick={itemCounter}>Agregar al Carrito</button>
-            </div>
-            <div>
-                <Div />
-                <label>{ count }</label>
-                <button onClick={itemCounter}>Agregar al Carrito</button>
-            </div>
-            <div>
-                <Div />
-                <label>{ count }</label>
-                <button onClick={itemCounter}>Agregar al Carrito</button>
-            </div>
-            <div>
-                <Div />
-                <label>{ count }</label>
-                <button onClick={itemCounter}>Agregar al Carrito</button>
-            </div>
-            <div>
-                <Div />
-                <label>{ count }</label>
-                <button onClick={itemCounter}>Agregar al Carrito</button>
-            </div>
-            <div>
-                <Div />
-                <label>{ count }</label>
-                <button onClick={itemCounter}>Agregar al Carrito</button>
-            </div>
-            <div>
-                <Div />
-                <label>{ count }</label>
-                <button onClick={itemCounter}>Agregar al Carrito</button>
-            </div>
+            
+
+                
+                {       loading ? <h1>Espere unos minutos</h1>
+                        :
+                        product.map((prod)=> <div key={prod.id}>
+                                          <Div />
+                                          {prod.name}<br></br>
+                                          {prod.description}<br></br>
+                                          unidades en stock {prod.stock}<br></br>
+                                          <label>{ count }</label>
+                                          <button onClick={itemCounter}>Agregar al Carrito</button>
+                                      </div>)
+                }
+            
+            
             
         </div>
     )
