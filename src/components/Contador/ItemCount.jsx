@@ -2,7 +2,6 @@ import Div from '../Catalogo/Div'
 import '../../App.css'
 import { getFetch } from '../../Helpers/getFetch';
 import { useEffect, useState } from 'react';
-
 function ItemCount() {
     const [product, setProduct]= useState([])
     const [loading, setLoading]= useState([true])
@@ -13,7 +12,7 @@ function ItemCount() {
             //throw new Error('esto es un error')
             return respuesta;
         })
-        .then((resp) => setProduct(resp))
+        .then((resp) => setProduct(resp)) 
         .catch(err => console.log(err))
         .finally(() => setLoading(false))
         
@@ -25,22 +24,10 @@ function ItemCount() {
 
     return (
         <div className="contenedor_imagenes">
-            
-
-                
-                {       loading ? <h1>Espere unos minutos</h1>
-                        :
-                        product.map((prod)=> <div key={prod.id}>
-                                          <Div />
-                                          {prod.name}<br></br>
-                                          {prod.description}<br></br>
-                                          unidades en stock {prod.stock}<br></br>
-                                          <label>{ count }</label>
-                                          <button onClick={itemCounter}>Agregar al Carrito</button>
-                                      </div>)
-                }
-            
-            
+            <div>
+                <label>{ count }</label>
+                <button onClick={itemCounter}>Agregar al Carrito</button>
+            </div>
             
         </div>
     )

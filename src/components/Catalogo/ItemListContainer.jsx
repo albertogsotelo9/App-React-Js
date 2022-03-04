@@ -1,5 +1,5 @@
 
-import ItemCount from '../Contador/ItemCount'
+import List from '../Catalogo/List'
 
 
 function ItemListContainer ({saludo}){
@@ -9,7 +9,9 @@ function ItemListContainer ({saludo}){
             
                <div>
                     <p>{saludo}</p>
-                    <ItemCount />
+                    <div>
+                        <List />
+                    </div>
                     
                </div>
                 
