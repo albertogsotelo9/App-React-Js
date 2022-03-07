@@ -1,32 +1,35 @@
-import Div from '../Catalogo/Div'
 import '../../App.css'
-import { getFetch } from '../../Helpers/getFetch';
-import { useEffect, useState } from 'react';
-function ItemCount() {
-    const [product, setProduct]= useState([])
-    const [loading, setLoading]= useState([true])
-
-    useEffect(() => {
-        getFetch
-        .then((respuesta)=> {
-            //throw new Error('esto es un error')
-            return respuesta;
-        })
-        .then((resp) => setProduct(resp)) 
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false))
-        
-    },[])
-    const [count, setCount] = useState(0);
-    const itemCounter = (()=>{
-        setCount(count+1)})
+cd import { useState } from 'react';
+function ItemCount({initial, stock, onAdd}) {
+    
+    const [count, setCount] = useState(initial);
+    const itemCountUp = ()=>{
+        if (count >= stock){
+            alert("No hay stock")
+        }else{
+            setCount(count+1)
+        }
+    }
+    const itemCountDown = ()=>{
+        if(count === 1){
+            alert ("No es posible restar más")
+        }else{
+            setCount(count-1)
+        }
+    }
+    const AgregarCarro= ()=>{
+        onAdd(count)
+    
+    }    
     
 
     return (
         <div className="contenedor_imagenes">
             <div>
+                <button onClick={itemCountDown}>-</button>
                 <label>{ count }</label>
-                <button onClick={itemCounter}>Agregar al Carrito</button>
+                <button onClick={itemCountUp}>+</button><br></br>
+                <button onClick={AgregarCarro}>Agregar al Carrito</button>
             </div>
             
         </div>

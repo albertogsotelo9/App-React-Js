@@ -17,6 +17,9 @@ function List() {
         .finally(() => setLoading(false))
         
     },[])
+    const onAdd= (cantidad)=>{
+        console.log(`seleccionaste ${cantidad} productos`)
+    }
     
     
 
@@ -32,7 +35,7 @@ function List() {
                                           {prod.name}<br></br>
                                           {prod.description}<br></br>
                                           unidades en stock {prod.stock}<br></br>
-                                          <ItemCount />
+                                          <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} />
                                       </div>)
                 }
             
