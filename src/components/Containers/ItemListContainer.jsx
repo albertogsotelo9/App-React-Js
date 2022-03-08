@@ -1,5 +1,5 @@
 
-import List from './Item'
+import List from '../Catalogo/Item'
 import { getFetch } from '../../Helpers/getFetch';
 import { useEffect, useState } from 'react';
 

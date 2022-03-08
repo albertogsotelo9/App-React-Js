@@ -29,7 +29,7 @@ function ItemCount({initial, stock, onAdd}) {
                 <button onClick={itemCountDown}>-</button>
                 <label>{ count }</label>
                 <button onClick={itemCountUp}>+</button><br></br>
-                <button onClick={AgregarCarro}>Agregar al Carrito</button>
+                <button onClick={AgregarCarro}>Detalle</button>
             </div>
             
         </div>
