@@ -1,5 +1,5 @@
 import '../../App.css'
-cd import { useState } from 'react';
+import { useState } from 'react';
 function ItemCount({initial, stock, onAdd}) {
     
     const [count, setCount] = useState(initial);
@@ -11,7 +11,7 @@ function ItemCount({initial, stock, onAdd}) {
         }
     }
     const itemCountDown = ()=>{
-        if(count === 1){
+        if(count === 0){
             alert ("No es posible restar más")
         }else{
             setCount(count-1)

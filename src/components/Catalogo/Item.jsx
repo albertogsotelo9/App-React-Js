@@ -1,25 +1,11 @@
-import Div from '../Catalogo/Div'
+import Div from './Div'
 import ItemCount from '../Contador/ItemCount'
-import { getFetch } from '../../Helpers/getFetch';
-import { useEffect, useState } from 'react';
-function List() {
-    const [product, setProduct]= useState([])
-    const [loading, setLoading]= useState([true])
 
-    useEffect(() => {
-        getFetch
-        .then((respuesta)=> {
-            //throw new Error('esto es un error')
-            return respuesta;
-        })
-        .then((resp) => setProduct(resp))
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false))
-        
-    },[])
+const List = ({product})=> {
     const onAdd= (cantidad)=>{
         console.log(`seleccionaste ${cantidad} productos`)
     }
+    
     
     
 
@@ -28,8 +14,7 @@ function List() {
             
 
                 
-                {       loading ? <h1>Espere unos minutos</h1>
-                        :
+                {       
                         product.map((prod)=> <div key={prod.id}>
                                           <Div />
                                           {prod.name}<br></br>

@@ -10,7 +10,7 @@ export const getFetch = new Promise((resolve, reject) => {
                 setTimeout(() =>
                 {resolve(url)
             }
-                ,3000)
+                ,2000)
             } else{
                 reject('404 Not Found')
             }
