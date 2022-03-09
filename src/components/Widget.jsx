@@ -1,13 +1,15 @@
 
 import './NavBar.css'
-function Widget (){
+const Cart = ()=>{
     
     return (
-            <img onClick ={ ()=> console.log('click')} className="widget" src={require('../Images/cart_icon_w.png')} alt="" />
+            
+                <img onClick ={ ()=> console.log('click')} className="widget" src={require('../Images/cart_icon_w.png')} alt="" />
+            
 
               
     )
     
 }
 
-export default Widget
+export default Cart

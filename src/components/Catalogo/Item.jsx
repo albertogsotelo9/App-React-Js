@@ -1,6 +1,7 @@
 import Div from './Div'
 import ItemCount from '../Contador/ItemCount'
 
+
 const List = ({product})=> {
     const onAdd= (cantidad)=>{
         console.log(`seleccionaste ${cantidad} productos`)
@@ -14,15 +15,14 @@ const List = ({product})=> {
             
 
                 
-                {       
-                        product.map((prod)=> <div key={prod.id}>
+                <div>
                                           <Div />
-                                          {prod.name}<br></br>
-                                          {prod.description}<br></br>
-                                          unidades en stock {prod.stock}<br></br>
-                                          <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} />
-                                      </div>)
-                }
+                                          {product.name}<br></br>
+                                          {product.description}<br></br>
+                                          unidades en stock {product.stock}<br></br>
+                                          <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
+                </div>
+                
             
             
             

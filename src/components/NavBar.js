@@ -1,7 +1,7 @@
 import React from 'react'
 import './NavBar.css'
-import Widget from './Widget'
 import '../../src/App.css'
+import Cart from './Widget'
 
 const NavBar = () =>{
   
@@ -13,7 +13,7 @@ const NavBar = () =>{
             <li><a href="/">Categorías</a></li>
             <li><a href="/">Mis Compras</a></li>
         </ul>
-        <Widget />
+        <Cart />
       </nav>
       
     )
