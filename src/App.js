@@ -7,19 +7,21 @@ import Cart from './components/Catalogo/Cart'
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="grid-areas">
-          <NavBar className="nav"/>
-        <Routes>
-          <Route path= '/Containers' element = {<ItemListContainer className="main" saludo="aca irán los azulejos" />}/>
-          <Route path='/Details' element= {<ItemDetailContainer />}/>
-          <Route path='/cart' element = {<Cart />} />
-
-          <Route path='/*' element= {<Navigate to ='/' replace />}/>
-          
-        </Routes>
-      </div>
-    </BrowserRouter>
+    
+        
+              <BrowserRouter>
+                    <div className="grid-areas">
+                      <NavBar className="nav"/>
+                      <Routes>
+                      
+                        <Route path="/detalle" element={<ItemDetailContainer />}/>
+                        <Route path="/cart" element= {<Cart />} />
+                        <Route path="/"  element= {   <ItemListContainer className="main" saludo="aca irán los azulejos" />}/>
+                        <Route path="/*" element={<Navigate to="/"  replace/>}/>
+                      
+                      </Routes>
+                    </div>
+              </BrowserRouter>
     
   );
 }

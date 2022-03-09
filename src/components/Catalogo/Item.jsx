@@ -15,13 +15,20 @@ const List = ({product})=> {
             
 
                 
-                <div>
-                                          <Div />
-                                          {product.name}<br></br>
-                                          {product.description}<br></br>
-                                          unidades en stock {product.stock}<br></br>
-                                          <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
-                </div>
+                
+                            
+                        
+                            
+                                {product.map((prod)=>  <div key={prod.id}> 
+                                        <Div />
+                                          {prod.name}<br></br>
+                                          {prod.description}<br></br>
+                                          unidades en stock {prod.stock}<br></br>
+                                          <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} />
+                                          </div>
+                                )}
+                        
+                
                 
             
             
