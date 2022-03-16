@@ -17,10 +17,7 @@ function ItemCount({initial, stock, onAdd}) {
             setCount(count-1)
         }
     }
-    const AgregarCarro= ()=>{
-        onAdd(count)
-    
-    }    
+     
     
 
     return (
@@ -29,7 +26,7 @@ function ItemCount({initial, stock, onAdd}) {
                 <button onClick={itemCountDown}>-</button>
                 <label>{ count }</label>
                 <button onClick={itemCountUp}>+</button><br></br>
-                <button onClick={AgregarCarro}>Detalle</button>
+                
             </div>
             
         </div>

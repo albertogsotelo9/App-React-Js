@@ -14,9 +14,11 @@ function App() {
                       <NavBar className="nav"/>
                       <Routes>
                       
-                        <Route path="/detalle" element={<ItemDetailContainer />}/>
+                        <Route path="/item/:detalleId" element={<ItemDetailContainer />}/>
                         <Route path="/cart" element= {<Cart />} />
                         <Route path="/"  element= {   <ItemListContainer className="main" saludo="aca irán los azulejos" />}/>
+                        <Route path="/categoria/:categoriaId"  element= {   <ItemListContainer className="main" saludo="aca irán los azulejos" />}/>
+                        <Route path="/categoria/:categoriaId/:detalleId"  element= {   <ItemListContainer className="main" saludo="aca irán los azulejos"/>}/>
                         <Route path="/*" element={<Navigate to="/"  replace/>}/>
                       
                       </Routes>

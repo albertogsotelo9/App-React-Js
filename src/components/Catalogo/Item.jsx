@@ -1,5 +1,6 @@
 import Div from './Div'
 import ItemCount from '../Contador/ItemCount'
+import { Link } from 'react-router-dom'
 
 
 const List = ({product})=> {
@@ -7,7 +8,7 @@ const List = ({product})=> {
         console.log(`seleccionaste ${cantidad} productos`)
     }
     
-    
+      
     
 
     return (
@@ -25,6 +26,10 @@ const List = ({product})=> {
                                           {prod.description}<br></br>
                                           unidades en stock {prod.stock}<br></br>
                                           <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} />
+                                          
+                                          <Link to={`item/${prod.id}`}>
+                                                <button>Detalle</button>
+                                          </Link>
                                           </div>
                                 )}
                         

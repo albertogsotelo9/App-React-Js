@@ -28,6 +28,7 @@ nav{
     list-style: none;
     display:inline-block;
     text-align:center;
+    position: relative;
 }
 .nav-links li a{
     text-decoration: none;
@@ -46,4 +47,22 @@ nav{
 .widget{
     width:11%;
     height:70%;
+}
+
+.desple{
+    position:absolute;
+    background-color: #092327;
+    width:120%;
+    display:none;
+} 
+
+.desple li a{
+    display:block;
+    padding:15px;
+    width:80%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-links li:hover .desple{
+    display:block;
 }
