@@ -1,5 +1,5 @@
 
-import List from '../Catalogo/Item'
+import List from '../Catalogo/ItemList'
 import { getFetch } from '../../Helpers/getFetch';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';

@@ -8,7 +8,9 @@ const NavBar = () =>{
   
   return (
       <nav>
-        <h1 id="h1Title" >PlastiBox</h1>
+        <NavLink to = '/'>
+          <h1 id="h1Title" >PlastiBox</h1>
+        </NavLink>
         <ul className="nav-links">
             <li><a href="/">Ofertas</a></li>
             <li><a href="/">Categorías</a>

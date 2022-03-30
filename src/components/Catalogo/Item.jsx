@@ -1,46 +1,18 @@
-import Div from './Div'
-import ItemCount from '../Contador/ItemCount'
+import Div from '../Catalogo/Div'
 import { Link } from 'react-router-dom'
 
-
-const List = ({product})=> {
-    const onAdd= (cantidad)=>{
-        console.log(`seleccionaste ${cantidad} productos`)
-    }
-    
-      
-    
-
-    return (
-        <div className="contenedor_imagenes">
-            
-
+export default function Item ({prod}){
+                return (
                 
-                
-                            
-                        
-                            
-                                {product.map((prod)=>  <div key={prod.id}> 
-                                        <Div />
-                                          {prod.name}<br></br>
-                                          {prod.description}<br></br>
-                                          unidades en stock {prod.stock}<br></br>
-                                          <ItemCount initial={1} stock={prod.stock} onAdd={onAdd} />
-                                          
-                                          <Link to={`item/${prod.id}`}>
-                                                <button>Detalle</button>
-                                          </Link>
-                                          </div>
-                                )}
-                        
-                
-                
-            
-            
-            
-        </div>
-    )
-
+                                <div>
+                                    <Div />
+                                    {prod.name}<br></br>
+                                    {prod.description}<br></br>
+                                    <Link to={`item/${prod.id}` }>
+                                                    <button>Detalle</button>
+                                    </Link>
+                                </div>
+                )
+                                        
+                                        
 }
-
-export default List
