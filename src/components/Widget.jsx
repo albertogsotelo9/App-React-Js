@@ -1,10 +1,16 @@
 
 import './NavBar.css'
-const Cart = ()=>{
+import {NavLink} from 'react-router-dom'
+import { useCartContext } from '../context/cartContext'
+function Carrito  (){
     
+    const  {cantidadTotal} = useCartContext()
     return (
             
-                <img onClick ={ ()=> console.log('click')} className="widget" src={require('../Images/cart_icon_w.png')} alt="" />
+                <NavLink to ='/cart'>
+                    {cantidadTotal()!== 0 && cantidadTotal()}
+                    <img onClick ={ ()=> console.log('click')} className="widget" src={require('../Images/cart_icon_w.png')} alt="" />
+                </NavLink>
             
 
               
@@ -12,4 +18,4 @@ const Cart = ()=>{
     
 }
 
-export default Cart
+export default Carrito
