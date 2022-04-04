@@ -1,6 +1,7 @@
 
 import { useCartContext } from '../../context/cartContext';
 import {useState} from 'react'
+import { addDoc, getFirestore , collection } from 'firebase/firestore';
 
 function Cart  (){
     
@@ -8,7 +9,7 @@ function Cart  (){
       email: '', name: '', phone: ''
     })
     
-
+    
     const { cartList, vaciarCart, removeItem, precioTotal } = useCartContext()
     console.log(cartList)
     const generarOrden= async (e)=>{
@@ -26,6 +27,11 @@ function Cart  (){
             return {id, nombre, precio}
                 
         })
+        const db = getFirestore()
+        const queryCollection = collection(db, 'ordenes')
+        addDoc(queryCollection, orden)
+        .catch(err => console.log(err))
+        .finally(() => console.log('termino'))
     }
     console.log(dataForm)
             const handleChange = (e) => {

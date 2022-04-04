@@ -16,7 +16,7 @@ const NavBar = () =>{
             <li><a href="/">Categorías</a>
                 <ul className="desple">
                   <NavLink to='categoria/industriales' href="/">Industriales</NavLink>
-                  <NavLink to='categoria/gastronomicos' href="/">Gastronómicos</NavLink>
+                  <NavLink to='categoria/gastronomia' href="/">Gastronómicos</NavLink>
                   <NavLink to='categoria/bazar' href="/">Bazar</NavLink>
                 </ul>
             </li>
