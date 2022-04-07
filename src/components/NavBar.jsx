@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom'
 const NavBar = () =>{
   
   return (
+    
       <nav>
         <NavLink to = '/'>
           <h1 id="h1Title" >PlastiBox</h1>

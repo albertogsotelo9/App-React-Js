@@ -68,3 +68,6 @@ nav{
 .nav-links li:hover .desple{
     display:block;
 }
+.countCartNumber{
+    color:white;
+}

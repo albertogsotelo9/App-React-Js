@@ -6,10 +6,10 @@ function Carrito  (){
     
     const  {cantidadTotal} = useCartContext()
     return (
-            
+               
                 <NavLink to ='/cart'>
-                    {cantidadTotal()!== 0 && cantidadTotal()}
-                    <img onClick ={ ()=> console.log('click')} className="widget" src={require('../Images/cart_icon_w.png')} alt="" />
+                    <img className="widget" src={require('../Images/cart_icon_w.png')}  alt="" />
+                    <div className='countCartNumber'>{cantidadTotal()!== 0 && cantidadTotal()}</div>
                 </NavLink>
             
 

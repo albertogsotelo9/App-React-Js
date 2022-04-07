@@ -9,7 +9,8 @@ function Cart  (){
       email: '', name: '', phone: ''
     })
     
-    
+    const [id, setId] = useState('')
+
     const { cartList, vaciarCart, removeItem, precioTotal } = useCartContext()
     console.log(cartList)
     const generarOrden= async (e)=>{
@@ -30,11 +31,13 @@ function Cart  (){
         const db = getFirestore()
         const queryCollection = collection(db, 'ordenes')
         addDoc(queryCollection, orden)
+        .then(resp => setId(resp.id))
         .catch(err => console.log(err))
         .finally(() => console.log('termino'))
     }
     console.log(dataForm)
-            const handleChange = (e) => {
+
+    const handleChange = (e) => {
                     setDataForm({
                     ...dataForm,
                     [e.target.name]: e.target.value
@@ -42,6 +45,7 @@ function Cart  (){
                 }
             
                     
+                
         return(
             <div>
                 
@@ -85,8 +89,8 @@ function Cart  (){
                             
                             <button>Terminar Compra</button>
                 </form>
-
-                                            
+                    <br></br> 
+                {id.length !== '' && `el id de la compra es:${id}`}                               
             </div>
         )
 }

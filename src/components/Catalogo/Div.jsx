@@ -1,4 +1,6 @@
 import '../../../src/App.css'
-export default function Div() {
-        return <div className=""><img  src={require('../../Images/imagen_prueba.png')} alt="" /></div>
+import '../../App.css'
+import imagen from '../../Images/Film.png'
+export default function Div({prod}) {
+        return <div className="imagen"><img  src={imagen} alt="" /></div>
 }
